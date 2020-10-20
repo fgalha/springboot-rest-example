@@ -1,0 +1,41 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+
+	<id>distribution.dir</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<file>
+			<source>admin-tool-version.txt</source>
+			<destName>admin-tool-version.txt</destName>
+			<filtered>true</filtered>
+			<outputDirectory>admin-tool/bin</outputDirectory>
+		</file>
+		<file>
+			<source>target/admin-tool-standalone.jar</source>
+			<destName>admin-tool-standalone.jar</destName>
+			<outputDirectory>admin-tool/bin</outputDirectory>
+		</file>
+		<file>
+			<source>src/main/resources/application.properties</source>
+			<destName>application.properties</destName>
+			<outputDirectory>admin-tool/config/</outputDirectory>
+		</file>
+	</files>
+	<fileSets>
+		<fileSet>
+			<directory>script</directory>
+			<outputDirectory>admin-tool/script</outputDirectory>
+			<lineEnding>unix</lineEnding>
+		</fileSet>
+		<fileSet>
+			<directory>config</directory>
+			<outputDirectory>admin-tool/config</outputDirectory>
+			<lineEnding>unix</lineEnding>
+		</fileSet>
+	</fileSets>
+</assembly>
