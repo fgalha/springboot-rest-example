@@ -14,7 +14,6 @@ public class FileBrowserServiceTest {
 	@Test
 	public void listAllTest() {
 		List<DirectoryItem> items = service.listAll("/");
-//		items.forEach(System.out::println);
 		Assertions.assertTrue(!items.isEmpty());
 	}
 	
